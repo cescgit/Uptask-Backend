@@ -105,7 +105,8 @@ export class AuthController {
       const jwtToken = generateJWT({ id: user.id });
       res.send(jwtToken);
     } catch (error) {
-      res.status(500).json({ error: "Hubo un error" });
+      console.log(error);
+      res.status(500).json({ error });
     }
   };
 
